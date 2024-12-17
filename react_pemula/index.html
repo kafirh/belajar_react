@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+            src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+        function Header() {
+            return <h1>Simple Counter🧮</h1>;
+        }
+
+        function Button({ label, onClick, disabled }) {
+            const buttonStyle = { margin: '5px', padding: '10px' };
+            return (
+                <button style={buttonStyle} onClick={onClick} disabled={disabled}>
+                    {label}
+                </button>
+            );
+        }
+
+        function MyApp() {
+            const [value, setValue] = React.useState(0);
+            const [isDone, setIsDone] = React.useState(false);
+
+            function AddClick() {
+                if (value < 10) {
+                    setValue(value + 1);
+                } else {
+                    setValue('Done!');
+                    setIsDone(true);
+                }
+            }
+
+            function MinClick() {
+                if (value > 0) {
+                    setValue(value - 1);
+                } else {
+                    setValue('Done!');
+                    setIsDone(true);
+                }
+            }
+
+            function Reset() {
+                setValue(0);
+                setIsDone(false);
+            }
+
+            return (
+                <React.Fragment>
+                    <Header />
+                    <Button label="-" onClick={MinClick} disabled={isDone} />
+                    <span> {value} </span>
+                    <Button label="+" onClick={AddClick} disabled={isDone} />
+                    <br />
+                    <Button label="Reset" onClick={Reset} disabled={!isDone} />
+                </React.Fragment>
+            );
+        }
+
+        const container = document.getElementById("root");
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+        </script>
+    </body>
+</html>

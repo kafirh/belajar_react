@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  font-family: Arial, sans-serif;
+}
+
+h1{
+  color: aqua;
+}
+
+.row-Board {
+  display: flex;
+  justify-content: center;
+}
+
+.kotak {
+  width: 35px;
+  height: 35px;
+  background-color: gray;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.kotak:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.status {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.reset-button{
+  width: 105px;
+  height: 35px;
+  background-color: gray;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.scoreboard{
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
